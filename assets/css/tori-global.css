@@ -1,0 +1,514 @@
+/* Web Design by Quodis 2009 */
+
+
+/* BEGIN General Styles */
+/* ----------------------------------------- */
+
+/* BEGIN Global reset */
+/* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, legend, label, fieldset, input, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+.tweet {
+	display:none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset, img {
+	border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+caption, th {
+	text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+/* END Global reset-RESET */
+
+/* BEGIN Clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+	
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* END Clearfix */
+
+html { height: 100% }
+
+body {
+	height: 100%;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+	color: #314044;
+    line-height: 20px; /* Baseline grid of 20px */
+	background: #FFF url(../img/layout/bodyBg.jpg) top center no-repeat;
+}
+
+a:link,
+a:visited {
+	color: #689604;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active,
+div#footer ul li#about a {
+	color: #689604; 
+	text-decoration: underline;
+	outline: none;
+}
+
+a:hover abbr {
+	border:none;
+}
+
+a img {
+	border: none; /* Gets rid of IE's blue borders */
+}
+
+a.thumb {
+	display:block;
+	margin:7px 0 0 0;
+}
+
+/* BEGIN Typography */
+
+h1 {
+	width: 110px;
+	height: 130px;
+}
+
+h1 a,
+h1 a:visited {
+	display: block;
+	width: 110px;
+	height: 130px;
+	background: transparent url(../img/layout/toriLogoLabel.png) left -18px no-repeat;
+	line-height: 500px;
+	overflow: hidden;
+}
+
+h1 a:hover {
+	background: transparent url(../img/layout/toriLogoLabel.png) left -14px no-repeat;
+}
+
+p {
+	margin: 0 0 20px 0;
+	line-height: 20px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+/* END Typography */
+
+/* ----------------------------------------- */
+/* END General Styles */
+
+
+/* BEGIN Helper Styles */
+/* ----------------------------------------- */
+
+/* BEGIN Forms */
+form#searchForm {
+	float: left;
+	height: 20px;
+	margin: 20px 0 0 10px;
+	padding: 10px;
+	color: #FFF;
+	background: transparent url(../img/layout/pixel1x1GrayBlueOpct60.png) top left repeat;
+	width: auto;
+}
+
+form label {
+	float: left;
+	margin: 0 5px 0 0;
+	width: auto;
+}
+
+form input.txtFld {
+	float: left;
+	height: 13px;
+	width: 80px;
+	padding: 3px 0;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px dashed #fff;
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+	color: #D9E021;
+	font-size: 11px;
+	line-height: 14px;
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+	outline: none;
+}
+
+form input.sbmt {
+	float: left;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 20px;
+	vertical-align: middle;
+	text-indent:-3000px;
+}
+
+form input.standby {
+	background:url(/assets/img/layout/zoom.png) no-repeat center center transparent;
+}
+
+form input.loading {
+	background:url(/assets/img/layout/ajax-loader.gif) no-repeat center center transparent;
+}
+
+form input.error {
+	background:url(/assets/img/layout/exclamation.png) no-repeat center center transparent;
+}
+
+
+
+
+/* END Forms */
+
+/* ----------------------------------------- */
+/* END Helper Styles */
+
+
+/* BEGIN Page Structure / Components */
+/* ----------------------------------------- */
+
+div#wrapper {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+div#header {
+	position: absolute;
+	z-index: 40;
+	top: 0;
+	left: 50%;
+	margin-left: -490px;
+	width: 980px;
+	height: 1px;
+	background: none;
+}
+
+div#content {
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: none;
+}
+
+div#footer {
+	position: fixed;
+	z-index: 30;
+	bottom: 0;
+	left: 50%;
+	margin-left: -490px;
+	width: 980px;
+	height: 60px;
+	background: transparent;
+}
+
+div#footer ul {
+	float: right;
+	width: 300px;
+}
+
+div#footer ul li {
+	float: left;
+	width: auto;
+}
+
+div#footer ul li a {
+	display: block;
+	line-height: 500px;
+	overflow: hidden;
+}
+
+div#footer ul li#aboutBttn a,
+div#footer ul li#aboutBttn a:visited {
+	width: 40px;
+	height: 60px;
+	background: transparent url(../img/layout/aboutLabel.png) center 10px no-repeat;
+}
+
+div#footer ul li#aboutBttn a:hover {
+	background-position: center 5px;
+}
+
+/* hide the div with the about info */
+#aboutWrapper {
+	display: none;
+}
+
+div#footer ul li#shareBttn a,
+div#footer ul li#shareBttn a:visited {
+	width: 40px;
+	height: 60px;
+	background: transparent url(../img/layout/shareLabel.png) center 10px no-repeat;
+}
+
+div#footer ul li#shareBttn a:hover {
+	background-position: center 5px;
+}
+
+div#footer ul li#twitterBttn a,
+div#footer ul li#twitterBttn a:visited {
+	width: 40px;
+	height: 60px;
+	background: transparent url(../img/layout/twitterLabel.png) center 10px no-repeat;
+}
+
+div#footer ul li#twitterBttn a:hover {
+	background-position: center 5px;
+}
+
+div#footer ul li#quodisBttn a,
+div#footer ul li#quodisBttn a:visited {
+	width: 170px;
+	height: 60px;
+	background: transparent url(../img/layout/quodisLabsLogoLabel.png) center 5px no-repeat;
+}
+
+div#footer ul li#quodisBttn a:hover {
+	background-position: center 0;
+}
+
+img#cloudL {
+	position: absolute;
+	z-index: 13;
+	top: 100px;
+	left: 70%;
+}
+
+img#cloudM {
+	position: absolute;
+	z-index: 16;
+	top: 200px;
+	left: 50%;
+}
+
+img#cloudS {
+	position: absolute;
+	z-index: 10;
+	top: 150px;
+	left: 15%;
+}
+
+img#cloudSS {
+	position: absolute;
+	z-index: 17;
+	top: 220px;
+	left: 35%;
+    width: 103px;
+    height: 47px;	
+}
+
+
+img#cloudSG {
+	position: absolute;
+	z-index: 17;
+	top: 220px;
+	left: 35%;
+    width: 116px;
+    height: 48px;	
+}
+
+
+div.tweet {
+	position: absolute;
+	z-index: 1;
+	top: 70%;
+	left: 50%;
+	margin-left: -100px;
+	width: 1000px;
+	padding: 25px 15px 15px 15px;
+	background: /*transparent url(../img/layout/tweetBox1x1GrayBlueOpct60.png) top center no-repeat*/ #000;
+	color: #FFF;
+	display:block !important;
+	font-size:40px;
+}
+
+div.tweet a,
+div.tweet a:visited {
+	text-decoration: none;
+	color: #D9E021;
+	font-size:40px;
+}
+
+div.tweet a:hover {
+	text-decoration: underline;
+	color: #FFF;
+}
+
+div.tweet p {
+	margin: 0;
+	line-height: 45px;
+}
+
+div.tweet h2 {
+	margin: 0 0 20px 0;
+	line-height: 45px;
+}
+
+div.tweet h2 i {
+	display: inline-block; float:left; margin-left:
+}
+
+div.toriWrapper {
+	position: absolute;
+}
+
+/* bird types
+-------------------------------------------------------------- */
+
+div.toriXLWrapper {
+	z-index: 19;
+	top: 260px;
+}
+
+div.toriLWrapper {
+	z-index: 17;
+	top: 180px;
+}
+
+div.toriMWrapper {
+	z-index: 15;
+	top: 130px;
+}
+
+div.toriSWrapper {
+	z-index: 14;
+	top: 60px;
+}
+
+div.toriXSWrapper {
+	z-index: 11;
+	top: 40px;
+}
+
+div#treesLWrapper,
+div#treesRWrapper {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -490px;
+	width: 980px;
+}
+
+div#treesLWrapper { z-index: 12; }
+div#treesRWrapper { z-index: 18; }
+
+img#treeL1 {
+	position: absolute;
+	z-index: 2;
+	top: 300px;
+	left: 130px;
+}
+
+img#treeL2 {
+	position: absolute;
+	z-index: 1;
+	top: 261px;
+	left: 221px;
+}
+
+img#treeL3 {
+	position: absolute;
+	z-index: 3;
+	top: 359px;
+	left: 225px;
+}
+
+img#treeR1 {
+	position: absolute;
+	z-index: 2;
+	top: 336px;
+	right: 220px;
+}
+
+img#treeR2 {
+	position: absolute;
+	z-index: 1;
+	top: 260px;
+	right: 104px;
+}
+/* ----------------------------------------- */
+/* END Page Structure / Components */
+
+
+/* AddThis override
+-------------------------------------------------------------- */
+
+.at300bs, .at15t_expanded, .at15t_compact {
+	background:none !important;
+}
+
+/*
+===========================================================
+	facebox overrides
+===========================================================
+*/
+#facebox .body {
+  background: transparent url(/assets/img/facebox/b.png) repeat scroll 0 0;
+}
+
+#facebox .body h2 {
+	font-weight: bold !important;
+	font-size: 15px;
+}
+
+#facebox .body a {
+	color: #D9E021;
+}
